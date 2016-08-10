@@ -7,16 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Cheat sheet for Dark Souls 2 SotFS. Checklist of things to do, items to get etc.">
     <meta name="author" content="Rafal Hejna">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href="css/main.css" rel="stylesheet">
     <!--[if lt IE 9]>
         <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <script src="js/jstorage.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="https://cdn.rawgit.com/andris9/jStorage/v0.4.12/jstorage.min.js"></script>	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script type="text/javascript">
         var profilesKey = 'ds2_profiles';
     </script>
     <script src="js/main.js"></script>
@@ -30,29 +29,35 @@
     </script>
 </head>
 <body>
-
-    <div class="container">
-
-        <div class="navbar">
-            <div class="navbar-inner">
-                <h1>Dark Souls 2 SotFS Cheat Sheet</h1>
-                <ul class="nav nav-tabs">
-                    <li class="active"><a href="#tabPlaythrough" data-toggle="tab">Playthrough</a></li>
-                    <li><a href="#tabChecklists" data-toggle="tab">Checklists</a></li>
-                    <li><a href="#tabInformation" data-toggle="tab">Information</a></li>
-                    <li><a href="#tabHelp" data-toggle="tab">Help</a></li>
-                </ul>
-                <div class="profile" style="float: right;">
-                    <div class="input-append">
-                        <select id="profiles">
-                        </select>
-                        <button class="btn" type="button" id="profileAdd">Add</button>
-                        <button class="btn" type="button" id="profileEdit">Edit</button>
-                   </div>
-                </div>
+	<nav class="navbar navbar-default">
+    	<div class="container-fluid">
+            <div class="navbar-header">
+            	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
+	            	<span class="sr-only">Toggle navigation</span>
+	            	<span class="icon-bar"></span>
+	            	<span class="icon-bar"></span>
+	            	<span class="icon-bar"></span>
+        		</button>
+        		<a class="navbar-brand" href="#">Dark Souls 2 SotFS Cheat Sheet</a>
+    		</div>
+    		<div class="collapse navbar-collapse" id="nav-collapse">
+	            <ul class="nav navbar-nav">
+	                <li class="active"><a href="#tabPlaythrough" data-toggle="tab">Playthrough</a></li>
+	                <li><a href="#tabChecklists" data-toggle="tab">Checklists</a></li>
+	                <li><a href="#tabInformation" data-toggle="tab">Information</a></li>
+	                <li><a href="#tabHelp" data-toggle="tab">Help</a></li>
+	            </ul>
+	            <form class="navbar-form navbar-right">
+		            <div class="form-group">
+	                    <select class="form-control" id="profiles"></select>
+                    </div>
+                    <button class="btn btn-default" type="button" id="profileAdd">Add</button>
+                    <button class="btn btn-default" type="button" id="profileEdit">Edit</button>
+            	</form>
             </div>
         </div>
-
+    </nav>
+    <div class="container">
         <div id="intro">
 
             <p>
@@ -69,6 +74,15 @@
         </div>
 
         <div class="tab-content">
+        	<div class="btn-group" role="group">
+		        <div class="btn-group" role="group" data-toggle="buttons">
+		          <label class="btn btn-default">
+		              <input type="checkbox" id="toggleHideCompleted" />
+		              Hide Completed
+		          </label>
+		        </div>
+	        </div>
+
 
             <div class="tab-pane active" id="tabPlaythrough">
 
@@ -2247,7 +2261,7 @@
 
                 <a name="Soul_Types"></a>
                 <h3>Soul Types</h3>
-                <table class="table-striped">
+                <table class="table table-striped">
                     <thead>
                         <tr><th>Name</th><th>Souls</th></tr>
                     </thead>
@@ -2301,7 +2315,7 @@
                 <p>
                     You can post in <a href="http://www.reddit.com/r/DarkSouls2/comments/23jd46/dark_souls_2_cheat_sheet/">this Reddit thread</a>
                     or if you know your way about Git/GitHub then fork
-                    <a href="https://github.com/smcnabb/dark-souls-2-cheat-sheet/tree/gh-pages">my repo</a> and
+                    <a href="https://github.com/rejna/dark-souls-2-sotfs-cheat-sheet/tree/gh-pages">my repo</a> and
                     submit a pull request.
                 </p>
                 <p>
@@ -2343,8 +2357,8 @@
 
     <div id="profileModal" class="modal hide fade">
         <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 id="profileModalTitle">Profile</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h3 id="profileModalTitle" class="modal-title">Profile</h3>
         </div>
         <div class="modal-body">
             <form class="form-horizontal">
@@ -2357,8 +2371,8 @@
             </form>
         </div>
         <div class="modal-footer">
-            <a href="#" id="profileModalClose" class="btn">Close</a>
-            <a href="#" id="profileModalAdd" class="btn btn-primary">Add</a>
+            <a href="#" id="profileModalClose" class="btn btn-default" data-dismiss="modal">Close</a>
+            <a href="#" id="profileModalAdd" class="btn btn-primary" data-dismiss="modal">Add</a>
             <a href="#" id="profileModalUpdate" class="btn btn-primary">Update</a>
             <a href="#" id="profileModalDelete" class="btn btn-danger">Delete</a>
         </div>
